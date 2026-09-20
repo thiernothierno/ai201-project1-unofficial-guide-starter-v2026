@@ -138,7 +138,16 @@ Sources retrieved: admin_campus_jobs_and_financial_aid.txt, admin_study_abroad.t
 
 | Question | In corpus? | Best distance |
 |---|---|---|
-|  |  |  |
+| Does studying abroad include in financial aid? | Yes | 0.369 |
+| how work-study and non-work-study affect financial aid? | Yes | 0.304 |
+| What is the average waiting time to do laundry? | Yes | 0.423 |
+| Does the campus offer a quite environment for study?| Yes | 0.515 |
+| Which month does the campus offer sale for parking?| Yes | 0.437 |
+| Which country won the first world cup?" | No | 0.847 |
+| Which language is the easiest to learn?| No | 0.814 |
+| How to design a hardware?| No | 0.806|
+| How python compare to java?| Yes | 0.857 |
+
 
 ## How I Used AI
 
