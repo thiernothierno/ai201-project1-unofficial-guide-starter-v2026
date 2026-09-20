@@ -20,40 +20,17 @@
 # Unit 1
 
 ## What This Does
-This is a retrieval-augmented question that provide a response from a pre-built system campus_life corpus: 88 shorts, student writing posts to learn more about certain rules within the campus such as parking permit, graduation requirements, housing lottery and how campus jobs are related to financial aid. When a question is asked for example "how work-study and non-work-study affect financial aid?" or "is the housing lottery random?" the system dig into all resources it contains and provide the answer. In the case if no resource contains information about what has been asked the system reply: "I don't have enough information about that".
-<!-- Three or four sentences. Which corpus you picked, and the kinds of
-     questions your system answers. Write it for someone who has never seen
-     this repo.
 
-     Milestone 5. -->
+This is a retrieval-augmented question that provide a response from a pre-built system campus_life corpus: 88 shorts, student writing posts to learn more about certain rules within the campus such as parking permit, graduation requirements, housing lottery and how campus jobs are related to financial aid. When a question is asked for example "how work-study and non-work-study affect financial aid?" or "is the housing lottery random?" the system dig into all resources it contains and provide the answer. In the case if no resource contains information about what has been asked the system reply: "I don't have enough information about that".
 
 ## Chunking Strategy
 
-All posts from the campus life are shorts, 317 characters average with (shortest 178, longest 549). Each post contains 2 to 5 paragraphs and provide 
+All posts from the campus life are shorts, 317 characters average with (shortest 178, longest 549). Each post contains 2 to 5 paragraphs and provide
 
 **Chunk size:**
 **Overlap:**
 
-<!-- What about YOUR documents made you pick these numbers? Short posts and
-     long sectioned guides don't want the same chunking, and "800 seemed
-     reasonable" earns nothing. Point at something you noticed when you read
-     the documents in Milestone 1.
-
-     If you changed your mind partway through, say so and say why. That's worth
-     more than pretending you got it right first time.
-
-     Milestone 3. -->
-
 ## Sample Chunks
-
-<!-- Five chunks, pasted as text. Label each one and name the file it came from
-     AND the function that produced it — the grader checks your code against
-     what you claim here.
-
-     `python app.py chunks -n 5` prints all three for you. Copy them straight
-     across.
-
-     Milestone 3. -->
 
 **Chunk 1** — source: `source: admin_add_drop_deadline.txt#0` — produced by: `produced by: chunker.py::fallback_split`
 
@@ -136,18 +113,17 @@ Sources retrieved: admin_campus_jobs_and_financial_aid.txt, admin_study_abroad.t
 
      Milestone 4. -->
 
-| Question | In corpus? | Best distance |
-|---|---|---|
-| Does studying abroad include in financial aid? | Yes | 0.369 |
-| how work-study and non-work-study affect financial aid? | Yes | 0.304 |
-| What is the average waiting time to do laundry? | Yes | 0.423 |
-| Does the campus offer a quite environment for study?| Yes | 0.515 |
-| Which month does the campus offer sale for parking?| Yes | 0.437 |
-| Which country won the first world cup?" | No | 0.847 |
-| Which language is the easiest to learn?| No | 0.814 |
-| How to design a hardware?| No | 0.806|
-| How python compare to java?| Yes | 0.857 |
-
+| Question                                                | In corpus? | Best distance |
+| ------------------------------------------------------- | ---------- | ------------- |
+| Does studying abroad include in financial aid?          | Yes        | 0.369         |
+| how work-study and non-work-study affect financial aid? | Yes        | 0.304         |
+| What is the average waiting time to do laundry?         | Yes        | 0.423         |
+| Does the campus offer a quite environment for study?    | Yes        | 0.515         |
+| Which month does the campus offer sale for parking?     | Yes        | 0.437         |
+| Which country won the first world cup?"                 | No         | 0.847         |
+| Which language is the easiest to learn?                 | No         | 0.814         |
+| How to design a hardware?                               | No         | 0.806         |
+| How python compare to java?                             | Yes        | 0.857         |
 
 ## How I Used AI
 
@@ -189,13 +165,13 @@ Sources retrieved: admin_campus_jobs_and_financial_aid.txt, admin_study_abroad.t
 
      Milestone 1. -->
 
-| Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
-|---|---|---|---|---|---|
-| 1. Retrieved chunk contains the answer | 4 of 5 |  |  |  |  |
-| 2. Every answer names a source | 5 of 5 |  |  |  |  |
-| 3. Gate stops out-of-corpus questions | 4 of 5 |  |  |  |  |
-| 4. | | | | | |
-| 5. | | | | | |
+| Criterion                              | Target | Run 1 | Run 2 | Run 3 | Verdict |
+| -------------------------------------- | ------ | ----- | ----- | ----- | ------- |
+| 1. Retrieved chunk contains the answer | 4 of 5 |       |       |       |         |
+| 2. Every answer names a source         | 5 of 5 |       |       |       |         |
+| 3. Gate stops out-of-corpus questions  | 4 of 5 |       |       |       |         |
+| 4.                                     |        |       |       |       |         |
+| 5.                                     |        |       |       |       |         |
 
 <!-- Underneath, paste the REAL output for each criterion from one of your
      runs — the actual text your system produced, not a description of it.
@@ -212,13 +188,13 @@ Sources retrieved: admin_campus_jobs_and_financial_aid.txt, admin_study_abroad.t
 
      Milestone 2. -->
 
-| # | Criterion | Verdict | How I decided |
-|---|---|---|---|
-| 1 |  |  |  |
-| 2 |  |  |  |
-| 3 |  |  |  |
-| 4 |  |  |  |
-| 5 |  |  |  |
+| #   | Criterion | Verdict | How I decided |
+| --- | --------- | ------- | ------------- |
+| 1   |           |         |               |
+| 2   |           |         |               |
+| 3   |           |         |               |
+| 4   |           |         |               |
+| 5   |           |         |               |
 
 ## Diagnoses
 
@@ -254,13 +230,13 @@ Sources retrieved: admin_campus_jobs_and_financial_aid.txt, admin_study_abroad.t
 <!-- Same format, same five criteria, three runs each.
      `python run_eval.py --label after` -->
 
-| Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
-|---|---|---|---|---|---|
-| 1. Retrieved chunk contains the answer | 4 of 5 |  |  |  |  |
-| 2. Every answer names a source | 5 of 5 |  |  |  |  |
-| 3. Gate stops out-of-corpus questions | 4 of 5 |  |  |  |  |
-| 4. | | | | | |
-| 5. | | | | | |
+| Criterion                              | Target | Run 1 | Run 2 | Run 3 | Verdict |
+| -------------------------------------- | ------ | ----- | ----- | ----- | ------- |
+| 1. Retrieved chunk contains the answer | 4 of 5 |       |       |       |         |
+| 2. Every answer names a source         | 5 of 5 |       |       |       |         |
+| 3. Gate stops out-of-corpus questions  | 4 of 5 |       |       |       |         |
+| 4.                                     |        |       |       |       |         |
+| 5.                                     |        |       |       |       |         |
 
 **Did it help?**
 
