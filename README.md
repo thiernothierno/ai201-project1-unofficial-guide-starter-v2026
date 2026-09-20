@@ -125,7 +125,7 @@ Source: admin_campus_jobs_and_financial_aid.txt
 Sources retrieved: admin_campus_jobs_and_financial_aid.txt, admin_study_abroad.txt, course_econ_101_workload.txt, course_engl_205_exams.txt, money_jobs.txt
 ```
 
-**My relevance cutoff:**
+**My relevance cutoff: is 0.6**
 
 <!-- The number you set in config.py, and how you got there.
 
