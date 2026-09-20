@@ -20,7 +20,7 @@
 # Unit 1
 
 ## What This Does
-
+This is a retrieval-augmented question that provide a response from a pre-built system campus_life corpus: 88 shorts, student writing posts to learn more about certain rules within the campus such as parking permit, graduation requirements, housing lottery and how campus jobs are related to financial aid. When a question is asked for example "how work-study and non-work-study affect financial aid?" or "is the housing lottery random?" the system dig into all resources it contains and provide the answer. In the case if no resource contains information about what has been asked the system reply: "I don't have enough information about that".
 <!-- Three or four sentences. Which corpus you picked, and the kinds of
      questions your system answers. Write it for someone who has never seen
      this repo.
