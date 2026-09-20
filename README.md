@@ -113,17 +113,18 @@ Sources retrieved: admin_campus_jobs_and_financial_aid.txt, admin_study_abroad.t
 
      Milestone 4. -->
 
-| Question                                                | In corpus? | Best distance |
-| ------------------------------------------------------- | ---------- | ------------- |
-| Does studying abroad include in financial aid?          | Yes        | 0.369         |
-| how work-study and non-work-study affect financial aid? | Yes        | 0.304         |
-| What is the average waiting time to do laundry?         | Yes        | 0.423         |
-| Does the campus offer a quite environment for study?    | Yes        | 0.515         |
-| Which month does the campus offer sale for parking?     | Yes        | 0.437         |
-| Which country won the first world cup?"                 | No         | 0.847         |
-| Which language is the easiest to learn?                 | No         | 0.814         |
-| How to design a hardware?                               | No         | 0.806         |
-| How python compare to java?                             | Yes        | 0.857         |
+| Question                                                    | In corpus? | Best distance |
+| ----------------------------------------------------------- | ---------- | ------------- |
+| Does studying abroad include in financial aid?              | Yes        | 0.369         |
+| how work-study and non-work-study affect financial aid?     | Yes        | 0.304         |
+| Which days are best to do laundry?                          | Yes        | 0.427         |
+| Does the campus offer a quite environment for study?        | Yes        | 0.515         |
+| Which month does the campus offer sale for parking?         | Yes        | 0.437         |
+| What is the capital of Mongolia??"                          | No         | 0.825         |
+| How do I change the oil in a diesel engine?                 | No         | 0.934         |
+| Who won the 1994 World Cup?                                 | No         | 0.886         |
+| What is the recommended dosage of ibuprofen for a headache? | No         | 0.884         |
+| How do I write a for loop in Rust?                          | No         | 0.896         |
 
 ## How I Used AI
 
