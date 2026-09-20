@@ -29,6 +29,8 @@ This is a retrieval-augmented question that provide a response from a pre-built 
 
 ## Chunking Strategy
 
+All posts from the campus life are shorts, 317 characters average with (shortest 178, longest 549). Each post contains 2 to 5 paragraphs and provide 
+
 **Chunk size:**
 **Overlap:**
 
