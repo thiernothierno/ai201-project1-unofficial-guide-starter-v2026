@@ -152,13 +152,13 @@ Sources retrieved: admin_campus_jobs_and_financial_aid.txt, admin_study_abroad.t
 
 ## Run Log — Before
 
-| Criterion                              | Target | Run 1 | Run 2 | Run 3 | Verdict |
-| -------------------------------------- | ------ | ----- | ----- | ----- | ------- |
-| 1. Retrieved chunk contains the answer | 4 of 5 | 5/5   | 5/5   | 5/5   | MET     |
-| 2. Every answer names a source         | 5 of 5 | 5/5   | 5/5   | 5/5   | MET     |
-| 3. Gate stops out-of-corpus questions  | 4 of 5 | 5/5   | 5/5   | 5/5   | MET     |
-| 4.                                     |        |       |       |       |         |
-| 5.                                     |        |       |       |       |         |
+| Criterion                                         | Target | Run 1 | Run 2 | Run 3 | Verdict |
+| ------------------------------------------------- | ------ | ----- | ----- | ----- | ------- |
+| 1. Retrieved chunk contains the answer            | 4 of 5 | 5/5   | 5/5   | 5/5   | MET     |
+| 2. Every answer names a source                    | 5 of 5 | 5/5   | 5/5   | 5/5   | MET     |
+| 3. Gate stops out-of-corpus questions             | 4 of 5 | 5/5   | 5/5   | 5/5   | MET     |
+| 4. No claim absent from the chunk                 | 4 of 5 | 5/5   | 5/5   | 5/5   | MET     |
+| 5. Named source is the chunk the answer came from | 4 of 5 | 5/5   | 5/5   | 5/5   | MET     |
 
 ### Criterion 1: "Does studying abroad include in financial aid" — run 1
 
@@ -212,87 +212,41 @@ Source: `admin_parking_permits.txt`.
 
 ## Verdicts
 
-<!-- MET or MISSED for each of the five, against the target you wrote last
-     unit — not a new one. Plus a sentence on how you decided. That sentence
-     matters most where it was close.
-
-     If your target said 4 of 5 and your runs came out 4, 3, 4, that's a MISS.
-     The target has to hold, not show up occasionally.
-
-     Milestone 2. -->
-
-| #   | Criterion                          | Verdict | How I decided |
-| --- | ---------------------------------- | ------- | ------------- |
-| 1   | Retrieved chunk contain the answer |         |               |
-| 2   | Every answer name a source         |         |               |
-| 3   | Gate stops-out-of-corpus question  |         |               |
-| 4   |                                    |         |               |
-| 5   |                                    |         |               |
+| #   | Criterion                                      | Verdict | How I decided                                      |
+| --- | ---------------------------------------------- | ------- | -------------------------------------------------- |
+| 1   | Retrieved chunk contain the answer             | MET     | All retrieved chunk contain the right answer.      |
+| 2   | Every answer name a source                     | MET     | Every answer from the chunk came with a source.    |
+| 3   | Gate stops-out-of-corpus question              | MET     | All gate stops-out-of-corpus fail the gate.        |
+| 4   | No claim absent from the chunk                 | MET     | Everything in the answer is included in the chunk. |
+| 5   | Named source is the chunk the answer came from | MET     | The source listed by each chunk is correct.        |
 
 ## Diagnoses
-
-<!-- For each miss: which stage caused it, and how. The stage alone isn't
-     enough — you need the mechanism.
-
-     Not a diagnosis: "Question 3 didn't work."
-     A diagnosis:     "Question 3 asks about laundry costs. The answer is in
-                       one sentence that got split across two chunks, so
-                       neither chunk on its own contains it."
-
-     The five stages: loading → chunking → embedding → retrieval → generation.
-
-     Look for a pattern. If three misses all ask about numbers, that's one
-     problem, not three.
-
-     Missed nothing? Say so, then say honestly whether your targets were set
-     low, and which one you'd tighten and to what.
-
-     Milestone 3. -->
 
 ## The Improvement
 
 **What I changed:**
+No improvement made since all criterion passed the gate.
 
 **Why I picked it:**
-
-<!-- Connect it to a specific diagnosis above in one sentence. If you can't,
-     you picked a fix because it sounded impressive. -->
+I decided to stay with the same entry point because the chunk return an answer with a source.
 
 ### Run Log — After
 
-<!-- Same format, same five criteria, three runs each.
-     `python run_eval.py --label after` -->
-
-| Criterion                              | Target | Run 1 | Run 2 | Run 3 | Verdict |
-| -------------------------------------- | ------ | ----- | ----- | ----- | ------- |
-| 1. Retrieved chunk contains the answer | 4 of 5 |       |       |       |         |
-| 2. Every answer names a source         | 5 of 5 |       |       |       |         |
-| 3. Gate stops out-of-corpus questions  | 4 of 5 |       |       |       |         |
-| 4.                                     |        |       |       |       |         |
-| 5.                                     |        |       |       |       |         |
+| Criterion                                         | Target | Run 1 | Run 2 | Run 3 | Verdict |
+| ------------------------------------------------- | ------ | ----- | ----- | ----- | ------- |
+| 1. Retrieved chunk contains the answer            | 4 of 5 | 5/5   | 5/5   | 5/5   | MET     |
+| 2. Every answer names a source                    | 5 of 5 | 5/5   | 5/5   | 5/5   | MET     |
+| 3. Gate stops out-of-corpus questions             | 4 of 5 | 5/5   | 5/5   | 5/5   | MET     |
+| 4. No claim absent from the chunk                 | 4 of 5 | 5/5   | 5/5   | 5/5   | MET     |
+| 5. Named source is the chunk the answer came from | 4 of 5 | 5/5   | 5/5   | 5/5   | MET     |
 
 **Did it help?**
-
-<!-- Say plainly whether it did, and how you know. If it made things worse,
-     say that — a change that backfired, honestly reported, earns full credit
-     and is more interesting than one that worked. What matters is that you can
-     tell.
-
-     Milestone 4. -->
+Since there was no change with the initial input ran before and the one ran after, there was no more to learn from the result.
 
 ## What's Still Broken
 
-<!-- For each criterion still missed after your fix: what you'd do about it,
-     and why you stopped where you did.
-
-     "I ran out of time" is fine if it's true. Pretending nothing is left is
-     not.
-
-     Milestone 5. -->
+Nothing is broken. I get the same result.
 
 ## What I'd Do Differently
 
-<!-- Knowing what you know now — which of your five criteria would you write
-     differently, and why?
-
-     Milestone 5. -->
+I guess what I would do differently is to increase the size of k and see what the chunk would return.
