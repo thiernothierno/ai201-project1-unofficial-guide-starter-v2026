@@ -25,7 +25,7 @@ This is a retrieval-augmented question that provide a response from a pre-built 
 
 ## Chunking Strategy
 
-All posts from the campus life are shorts, 317 characters average with (shortest 178, longest 549). Each post contains 2 to 5 paragraphs and provide
+All posts from the campus life are shorts, 317 characters average with (shortest 178, longest 549). Each post contains 2 to 5 paragraphs.
 
 **Chunk size:**
 **Overlap:**
@@ -150,21 +150,7 @@ Sources retrieved: admin_campus_jobs_and_financial_aid.txt, admin_study_abroad.t
 
 # Unit 2
 
-<!-- These sections get ADDED to what's already above. Don't delete or rewrite
-     unit 1 — the point is that someone can see what you said before you knew
-     how it went. -->
-
 ## Run Log — Before
-
-<!-- Your five criteria, three runs each. `python run_eval.py --label before`
-     runs the questions, puts the OUT_OF_SCOPE ones through the gate, and
-     writes it all into results/ for you. Targets come from criteria.md; the
-     verdict column is your call.
-
-     Criterion 3 is measured in one deterministic pass rather than three, so
-     the same number goes in all three run columns. That's correct, not lazy.
-
-     Milestone 1. -->
 
 | Criterion                              | Target | Run 1 | Run 2 | Run 3 | Verdict |
 | -------------------------------------- | ------ | ----- | ----- | ----- | ------- |
@@ -191,20 +177,21 @@ Work-study earnings do not count against your financial aid the way ordinary inc
 
 Source: `admin_campus_jobs_and_financial_aid.txt`
 
-### Criterion 3: " Which days are best to do laundry?" run 1
+### Criterion 3:
 
-- Best distance: 0.4121 (passed the gate)
-- Sources retrieved: housing_aldridge_hall_laundry.txt, housing_innisfree_hall_laundry.txt, housing_morrow_house_laundry.txt, housing_old_brewhouse_laundry.txt, housing_tamsin_court_laundry.txt
+Produced by `run_eval.py::check_out_of_scope`, cutoff 0.6. Refused 5 of 5.
 
-The best time to do laundry is Tu Which days are best to do laundry?esday or Wednesday morning.
+Retrieval is deterministic and the gate is a comparison against a
+fixed number, so these do not vary between runs — one pass over the
+list is the whole measurement.
 
-Sources:
-
-- `housing_tamsin_court_laundry.txt`
-- `housing_old_brewhouse_laundry.txt`
-- `housing_aldridge_hall_laundry.txt`
-- `housing_morrow_house_laundry.txt`
-- `housing_innisfree_hall_laundry.txt`
+| Out-of-scope question                                       | Best distance | Gate    |
+| ----------------------------------------------------------- | ------------- | ------- |
+| What is the capital of Mongolia?                            | 0.825         | refused |
+| How do I change the oil in a diesel engine?                 | 0.934         | refused |
+| Who won the 1994 World Cup?                                 | 0.886         | refused |
+| What is the recommended dosage of ibuprofen for a headache? | 0.844         | refused |
+| How do I write a for loop in Rust?                          | 0.896         | refused |
 
 ### Criterion 4: "Does the campus offer a quite environment for study" — run 1
 
@@ -223,22 +210,6 @@ Source: `housing_tamsin_court.txt`.
 Student permits for the west lots go on sale in August.
 Source: `admin_parking_permits.txt`.
 
-## The relevance gate on out-of-corpus questions
-
-Produced by `run_eval.py::check_out_of_scope`, cutoff 0.6. Refused 5 of 5.
-
-Retrieval is deterministic and the gate is a comparison against a
-fixed number, so these do not vary between runs — one pass over the
-list is the whole measurement.
-
-| Out-of-scope question                                       | Best distance | Gate    |
-| ----------------------------------------------------------- | ------------- | ------- |
-| What is the capital of Mongolia?                            | 0.825         | refused |
-| How do I change the oil in a diesel engine?                 | 0.934         | refused |
-| Who won the 1994 World Cup?                                 | 0.886         | refused |
-| What is the recommended dosage of ibuprofen for a headache? | 0.844         | refused |
-| How do I write a for loop in Rust?                          | 0.896         | refused |
-
 ## Verdicts
 
 <!-- MET or MISSED for each of the five, against the target you wrote last
@@ -250,13 +221,13 @@ list is the whole measurement.
 
      Milestone 2. -->
 
-| #   | Criterion | Verdict | How I decided |
-| --- | --------- | ------- | ------------- |
-| 1   |           |         |               |
-| 2   |           |         |               |
-| 3   |           |         |               |
-| 4   |           |         |               |
-| 5   |           |         |               |
+| #   | Criterion                          | Verdict | How I decided |
+| --- | ---------------------------------- | ------- | ------------- |
+| 1   | Retrieved chunk contain the answer |         |               |
+| 2   | Every answer name a source         |         |               |
+| 3   | Gate stops-out-of-corpus question  |         |               |
+| 4   |                                    |         |               |
+| 5   |                                    |         |               |
 
 ## Diagnoses
 
