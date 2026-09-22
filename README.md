@@ -249,4 +249,4 @@ Nothing is broken. I get the same result.
 
 ## What I'd Do Differently
 
-I guess what I would do differently is to increase the size of k and see what the chunk would return.
+I guess what I would do differently is either to increase the size of k or change the wording of each question and see what the chunk would return.
