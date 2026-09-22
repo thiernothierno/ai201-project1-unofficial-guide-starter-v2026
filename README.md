@@ -168,15 +168,76 @@ Sources retrieved: admin_campus_jobs_and_financial_aid.txt, admin_study_abroad.t
 
 | Criterion                              | Target | Run 1 | Run 2 | Run 3 | Verdict |
 | -------------------------------------- | ------ | ----- | ----- | ----- | ------- |
-| 1. Retrieved chunk contains the answer | 4 of 5 |       |       |       |         |
-| 2. Every answer names a source         | 5 of 5 |       |       |       |         |
-| 3. Gate stops out-of-corpus questions  | 4 of 5 |       |       |       |         |
+| 1. Retrieved chunk contains the answer | 4 of 5 | 5/5   | 5/5   | 5/5   | MET     |
+| 2. Every answer names a source         | 5 of 5 | 5/5   | 5/5   | 5/5   | MET     |
+| 3. Gate stops out-of-corpus questions  | 4 of 5 | 5/5   | 5/5   | 5/5   | MET     |
 | 4.                                     |        |       |       |       |         |
 | 5.                                     |        |       |       |       |         |
 
-<!-- Underneath, paste the REAL output for each criterion from one of your
-     runs — the actual text your system produced, not a description of it.
-     Name the file and function that produced it. -->
+### Criterion 1: "Does studying abroad include in financial aid" — run 1
+
+- Best distance: 0.3667 (passed the gate)
+- Sources retrieved: admin_campus_jobs_and_financial_aid.txt, admin_declaring_a_major.txt, admin_graduation_requirements.txt, admin_pass_fail_option.txt, admin_study_abroad.txt
+
+Yes, your financial aid package travels with you when you study abroad.
+Source: `admin_study_abroad.txt`
+
+### Criterion 2: "how work-study and non-work-study affect financial aid"— run 1
+
+- Best distance: 0.3008 (passed the gate)
+- Sources retrieved: admin_campus_jobs_and_financial_aid.txt, admin_study_abroad.txt, course_econ_101_workload.txt, course_engl_205_exams.txt, money_jobs.txt
+
+Work-study earnings do not count against your financial aid the way ordinary income does, whereas non-work-study campus jobs do count against it.
+
+Source: `admin_campus_jobs_and_financial_aid.txt`
+
+### Criterion 3: " Which days are best to do laundry?" run 1
+
+- Best distance: 0.4121 (passed the gate)
+- Sources retrieved: housing_aldridge_hall_laundry.txt, housing_innisfree_hall_laundry.txt, housing_morrow_house_laundry.txt, housing_old_brewhouse_laundry.txt, housing_tamsin_court_laundry.txt
+
+The best time to do laundry is Tu Which days are best to do laundry?esday or Wednesday morning.
+
+Sources:
+
+- `housing_tamsin_court_laundry.txt`
+- `housing_old_brewhouse_laundry.txt`
+- `housing_aldridge_hall_laundry.txt`
+- `housing_morrow_house_laundry.txt`
+- `housing_innisfree_hall_laundry.txt`
+
+### Criterion 4: "Does the campus offer a quite environment for study" — run 1
+
+Best distance: 0.5218 (passed the gate)
+
+- Sources retrieved: course_econ_101.txt, housing_aldridge_hall.txt, housing_tamsin_court.txt, money_jobs.txt, transit_walking.txt
+
+Yes, Aldridge Hall has quiet floors on levels 3 and 4 that are genuinely enforced (housing_aldridge_hall.txt). Additionally, Tamsin Court is quiet structurally because it has concrete floors between units.
+Source: `housing_tamsin_court.txt`.
+
+### Criterion 5: "Which month does the campus offer sale for parking?" — run 1
+
+- Best distance: 0.4374 (passed the gate)
+- Sources retrieved: admin_parking_permits.txt, housing_aldridge_hall.txt, money_textbooks.txt, transit_shuttle.txt, transit_walking.txt
+
+Student permits for the west lots go on sale in August.
+Source: `admin_parking_permits.txt`.
+
+## The relevance gate on out-of-corpus questions
+
+Produced by `run_eval.py::check_out_of_scope`, cutoff 0.6. Refused 5 of 5.
+
+Retrieval is deterministic and the gate is a comparison against a
+fixed number, so these do not vary between runs — one pass over the
+list is the whole measurement.
+
+| Out-of-scope question                                       | Best distance | Gate    |
+| ----------------------------------------------------------- | ------------- | ------- |
+| What is the capital of Mongolia?                            | 0.825         | refused |
+| How do I change the oil in a diesel engine?                 | 0.934         | refused |
+| Who won the 1994 World Cup?                                 | 0.886         | refused |
+| What is the recommended dosage of ibuprofen for a headache? | 0.844         | refused |
+| How do I write a for loop in Rust?                          | 0.896         | refused |
 
 ## Verdicts
 
